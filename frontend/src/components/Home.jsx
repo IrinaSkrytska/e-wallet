@@ -1,5 +1,4 @@
 import React from "react";
-import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../assets/css/Home.css";
 import smartphone from "../assets/img/smartphone.png";
@@ -56,28 +55,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* How It Works Section */}
-      <section className="how-it-works">
-        <div className="image-phone">
-          <img src={smartphone} alt="Phone preview" />
-          <img src={lady} alt="Woman preview" />
-          <img src={groceryStore} alt="Grocery preview" />
-        </div>
-        <div className="how-text">
-          <h2>How it works</h2>
-          <p>
-            Goodbudget is a budget tracker for the modern age. Say no more to
-            carrying paper envelopes. This virtual budget program keeps you on
-            track with family and friends with the time-tested envelope
-            budgeting method.
-          </p>
-
-          <button onClick={() => navigate("/auth")} className="btn-white">
-            Try Now
-          </button>
-        </div>
-      </section>
-
       {/* Features Section */}
       <section className="features">
         <h2>Great budget software</h2>
@@ -128,6 +105,28 @@ const Home = () => {
         <button onClick={() => navigate("/auth")} className="btn-outline">
           Get your personal budget manager
         </button>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="how-it-works">
+        <div className="image-phone">
+          <img src={smartphone} alt="Phone preview" />
+          <img src={lady} alt="Woman preview" />
+          <img src={groceryStore} alt="Grocery preview" />
+        </div>
+        <div className="how-text">
+          <h2>How it works</h2>
+          <p>
+            Goodbudget is a budget tracker for the modern age. Say no more to
+            carrying paper envelopes. This virtual budget program keeps you on
+            track with family and friends with the time-tested envelope
+            budgeting method.
+          </p>
+
+          <button onClick={() => navigate("/auth")} className="btn-white">
+            Try Now
+          </button>
+        </div>
       </section>
     </div>
   );

@@ -153,6 +153,7 @@
   background: rgba(128, 152, 249, 0.1);
 }
 .input-icon {
+  cursor: pointer;
   position: absolute;
   top: 35%;
   left: 10px;

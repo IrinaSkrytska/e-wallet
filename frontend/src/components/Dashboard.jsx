@@ -1,13 +1,13 @@
-import React from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
-import '../assets/css/Dashboard.css';
+import React from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import "../assets/css/Dashboard.css";
 
 const Dashboard = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem('token');
-    navigate('/');
+    localStorage.removeItem("token");
+    navigate("/");
   };
 
   return (
@@ -18,16 +18,32 @@ const Dashboard = () => {
           <span className="logo">BudgetWise</span>
           <NavLink
             to="/dashboard"
-            className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
           >
             Dashboard
           </NavLink>
           <NavLink
             to="/budgets"
-            className={({ isActive }) => isActive ? "nav-link active" : "nav-link"}
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
           >
             Budgets
           </NavLink>
+          <button className="add-budget">
+            <svg
+              width="16"
+              height="16"
+              fill="currentColor"
+              className="addIcon"
+              viewBox="0 0 16 16"
+            >
+              <path d="M8 7V1h1v6h6v1H9v6H8V8H2V7h6z" />
+            </svg>
+            Add a new budget
+          </button>
         </div>
         <div className="nav-right">
           <button onClick={handleLogout} className="nav-link logout-btn">
@@ -37,17 +53,46 @@ const Dashboard = () => {
       </nav>
       <div className="dashboard-content">
         <div className="month-summary">
-          <h2>Current Month Summary</h2>
+          <div className="month-plan-thumb">
+            <p className="month-plan-text">PLAN</p>
+          </div>
+          <div className="month-summary-thumb">
+            <p className="month-summary-text">Current Month Summary</p>
 
-          <div className="summary-card">
-            <div className="summary-section">
-              <h4>Total Income</h4>
-              <p>$4,000.00</p>
-            </div>
+            <div className="summary-card">
+              <div className="summary-thumb">
+                <h4 className="summary-income-text">Income</h4>
+                <div className="income-progress-line">
+                  <div
+                    className="progress-dot"
+                    style={{
+                      position: "absolute",
+                      left: `32%`,
+                    }}
+                  ></div>
+                </div>
+                <div className="income-values-thumb">
+                  <p className="income-value">$500 earned</p>
+                  <p className="income-value">$4000 goal</p>
+                </div>
+              </div>
 
-            <div className="summary-section">
-              <h4>Total Outcome</h4>
-              <p>$2,500.00</p>
+              <div className="outcome-thumb">
+                <p className="summary-outcome-text">Total Outcome</p>
+                <div className="outcome-progress-line">
+                  <div
+                    className="outcome-progress-dot"
+                    style={{
+                      position: "absolute",
+                      left: `10%`,
+                    }}
+                  ></div>
+                </div>
+                <div className="outcome-values-thumb">
+                  <p className="outcome-value">$250 spent</p>
+                  <p className="outcome-value">$3000 budget</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
