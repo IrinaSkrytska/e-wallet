@@ -17,11 +17,11 @@ function App() {
       <Route
         path="/dashboard"
         element={
-          // !!localStorage.getItem("token") ? (
-          <Dashboard />
-          //   ) : (
-          //     <Navigate to="/auth" />
-          //   )
+          !!localStorage.getItem("token") ? (
+            <Dashboard />
+          ) : (
+            <Navigate to="/auth" />
+          )
         }
       />
       <Route

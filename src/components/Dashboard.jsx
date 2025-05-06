@@ -33,18 +33,6 @@ const Dashboard = () => {
             >
               Budgets
             </NavLink>
-            <button className="add-budget">
-              <svg
-                width="16"
-                height="16"
-                fill="currentColor"
-                className="addIcon"
-                viewBox="0 0 16 16"
-              >
-                <path d="M8 7V1h1v6h6v1H9v6H8V8H2V7h6z" />
-              </svg>
-              Add a new budget
-            </button>
           </div>
           <div className="nav-right">
             <button onClick={handleLogout} className="nav-link logout-btn">
