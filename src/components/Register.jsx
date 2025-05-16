@@ -98,7 +98,7 @@ const Register = () => {
               <div className="form-group">
                 <input
                   alt="password"
-                  type={showPassword ? "text" : "password"}
+                  type={"password"}
                   placeholder="Password"
                   {...register("password")}
                 />
